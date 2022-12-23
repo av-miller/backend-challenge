@@ -17,8 +17,8 @@ poetry install
 
 ## Database
 
-Database used in this example is SQLite. In order to get database created and loaded with seed data, please run the 
-following command.
+Database used in this example is SQLite. Please see Docker Compose section for Postgres. In order to get database 
+created and loaded with seed data, please run the following command.
 
 ```bash
 alembic upgrade head
