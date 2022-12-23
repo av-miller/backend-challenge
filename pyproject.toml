@@ -12,6 +12,7 @@ assertpy = "^1.1"
 fastapi = "^0.88.0"
 uvicorn = "^0.20.0"
 SQLAlchemy = "^1.4.41"
+alembic = "^1.9.1"
 
 [tool.poetry.dev-dependencies]
 
