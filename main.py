@@ -12,6 +12,9 @@ app = FastAPI()
 
 @app.get("/factories/{identifier}")
 def find_factory(identifier: str, factory_dao: FactoryDao = Depends(get_factory_dao)):
+    """
+    Finds a factory by its identifier
+    """
     factory = factory_dao.find(identifier)
     if factory:
         return factory
@@ -21,12 +24,27 @@ def find_factory(identifier: str, factory_dao: FactoryDao = Depends(get_factory_
 
 @app.get("/factories")
 def list_factories(factory_dao: FactoryDao = Depends(get_factory_dao)):
+    """
+    Lists all factories
+    """
     # no pagination or chunking, so it will fold for larger datasets
     return factory_dao.list()
 
 
+@app.get("/sprockets")
+def list_sprockets(sprocket_dao: SprocketDao = Depends(get_sprocket_dao)):
+    """
+    Lists all sprockets
+    """
+    # no pagination or chunking, so it will fold for larger datasets
+    return sprocket_dao.list()
+
+
 @app.get("/sprockets/{identifier}")
 def find_sprocket(identifier: str, sprocket_dao: SprocketDao = Depends(get_sprocket_dao)):
+    """
+    Finds a sprocket by identifier
+    """
     sprocket = sprocket_dao.find(identifier)
     if sprocket:
         return sprocket
@@ -36,6 +54,9 @@ def find_sprocket(identifier: str, sprocket_dao: SprocketDao = Depends(get_sproc
 
 @app.post("/sprockets")
 def create_sprocket(s: SprocketDto, sprocket_dao: SprocketDao = Depends(get_sprocket_dao)):
+    """
+    Creates a new sprocket
+    """
     sprocket = Sprocket(teeth=s.teeth,
                         pitch_diameter=s.pitch_diameter,
                         outside_diameter=s.outside_diameter,
@@ -47,6 +68,9 @@ def create_sprocket(s: SprocketDto, sprocket_dao: SprocketDao = Depends(get_spro
 
 @app.put("/sprockets/{identifier}")
 def update_sprocket(identifier: str, s: SprocketDto, sprocket_dao: SprocketDao = Depends(get_sprocket_dao)):
+    """
+    Updates an existing sprocket. Only updates the fields that are passed in.
+    """
     sprocket_dao.update(identifier, {'teeth': s.teeth,
                                      'pitch_diameter': s.pitch_diameter,
                                      'outside_diameter': s.outside_diameter,
