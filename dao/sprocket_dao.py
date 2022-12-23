@@ -36,6 +36,7 @@ class SprocketDao:
         with sessionmaker(bind=self.sql_engine)() as session:
             session.add(sprocket)
             session.commit()
+            session.refresh(sprocket)
 
     def update(self, identifier: str, fields: Dict):
         """
