@@ -10,8 +10,8 @@ from orm.sprocket import Sprocket
 app = FastAPI()
 
 
-@app.get("/factory/{identifier}")
-def list_sprockets(identifier: str, factory_dao: FactoryDao = Depends(get_factory_dao)):
+@app.get("/factories/{identifier}")
+def find_factory(identifier: str, factory_dao: FactoryDao = Depends(get_factory_dao)):
     factory = factory_dao.find(identifier)
     if factory:
         return factory
@@ -19,10 +19,10 @@ def list_sprockets(identifier: str, factory_dao: FactoryDao = Depends(get_factor
         raise HTTPException(status_code=404, detail="Factory not found")
 
 
-@app.get("/sprockets")
-def list_sprockets(sprocket_dao: SprocketDao = Depends(get_sprocket_dao)):
+@app.get("/factories")
+def list_factories(factory_dao: FactoryDao = Depends(get_factory_dao)):
     # no pagination or chunking, so it will fold for larger datasets
-    return sprocket_dao.list()
+    return factory_dao.list()
 
 
 @app.get("/sprockets/{identifier}")

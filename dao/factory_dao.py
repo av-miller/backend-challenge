@@ -16,3 +16,11 @@ class FactoryDao:
         """
         with sessionmaker(bind=self.sql_engine)() as session:
             return session.query(Factory).filter(Factory.id == identifier).first()
+
+    def list(self):
+        """
+        Lists all factories. No pagination or chunking
+        :return:
+        """
+        with sessionmaker(bind=self.sql_engine)() as session:
+            return session.query(Factory).all()
