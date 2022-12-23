@@ -63,3 +63,11 @@ Please stop docker compose environment when done with the below command.
 ```bash
 docker-compose down -v
 ```
+
+## Tests
+
+To run test cases, please run the following command.
+
+```bash
+pytest
+```
