@@ -37,3 +37,29 @@ uvicorn app.main:app --reload
 Once the service starts, you should be able to access Swagger API client at the below URL.
 
 http://localhost:8000/docs
+
+
+## Docker Compose
+
+To run the service against a Postgres database in a Docker container, please start up docker compose with the following
+command.
+
+```bash
+docker-compose up -d --build
+```
+
+Once the environment is up, please run database migrations using the below command.
+
+```bash
+docker-compose exec svc alembic upgrade head
+```
+
+Swagger API client should be available at the following URL.
+
+http://localhost:8000/docs
+
+Please stop docker compose environment when done with the below command.
+
+```bash
+docker-compose down -v
+```
