@@ -1,9 +1,9 @@
 from fastapi import Depends
 from sqlalchemy import create_engine
 
-from config.settings import Settings
-from dao.factory_dao import FactoryDao
-from dao.sprocket_dao import SprocketDao
+from app.config.settings import Settings
+from app.dao.factory_dao import FactoryDao
+from app.dao.sprocket_dao import SprocketDao
 
 
 def get_settings():

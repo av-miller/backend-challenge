@@ -1,6 +1,6 @@
 from sqlalchemy import Column, JSON, String
 
-from orm import Base, uuid_gen
+from app.orm import Base, uuid_gen
 
 
 class Factory(Base):

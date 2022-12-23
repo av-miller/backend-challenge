@@ -1,6 +1,6 @@
 from sqlalchemy.orm import sessionmaker
 
-from orm.factory import Factory
+from app.orm.factory import Factory
 
 
 class FactoryDao:

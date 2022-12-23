@@ -31,7 +31,7 @@ This should create a file called `backend.db` containing required tables.
 Service is implemented using FastAPI. Please run the following command to start up the service.
 
 ```bash
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 
 Once the service starts, you should be able to access Swagger API client at the below URL.

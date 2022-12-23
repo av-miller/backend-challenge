@@ -2,7 +2,7 @@ from typing import Dict
 
 from sqlalchemy.orm import sessionmaker
 
-from orm.sprocket import Sprocket
+from app.orm.sprocket import Sprocket
 
 
 class SprocketDao:

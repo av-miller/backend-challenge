@@ -1,11 +1,11 @@
 import uvicorn as uvicorn
 from fastapi import FastAPI, Depends, HTTPException
 
-from config.dependency import get_sprocket_dao, get_factory_dao
-from dao.factory_dao import FactoryDao
-from dao.sprocket_dao import SprocketDao
-from dto.sprocket import SprocketDto
-from orm.sprocket import Sprocket
+from app.config.dependency import get_sprocket_dao, get_factory_dao
+from app.dao.factory_dao import FactoryDao
+from app.dao.sprocket_dao import SprocketDao
+from app.dto.sprocket import SprocketDto
+from app.orm.sprocket import Sprocket
 
 app = FastAPI()
 
