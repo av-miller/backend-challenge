@@ -9,6 +9,12 @@ described in [Poetry documentation](https://python-poetry.org/docs/).
 curl -sSL https://install.python-poetry.org | python3 -
 ```
 
+The above command should work for Linux, macOS, Windows (WSL). However, if you use Windows, please use the following command.
+
+```powershell
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
+```
+
 To install dependencies, please run the following command.
 
 ```bash
