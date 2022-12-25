@@ -23,6 +23,12 @@ To install dependencies, please run the following command.
 poetry install
 ```
 
+Once, dependencies are installed, please active your environment by running the following command.
+
+```bash
+poetry shell
+```
+
 ## Database
 
 Database used in this example is SQLite. Please see Docker Compose section for Postgres. In order to get database 
