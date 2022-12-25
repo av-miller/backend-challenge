@@ -12,10 +12,10 @@ curl -sSL https://install.python-poetry.org | python3 -
 The above command should work for Linux, macOS, Windows (WSL). However, if you use Windows, please run the following command in PowerShell.
 
 ```powershell
-(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python3 -
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
 ```
 
-The above steps assume that you have already install Python 3 on your system.
+The above steps assume that you have already install Python 3 on your system from https://www.python.org/downloads/. I do not recommend using Windows Store installation of Python as it does not set up your paths correctly.
 
 To install dependencies, please run the following command.
 
